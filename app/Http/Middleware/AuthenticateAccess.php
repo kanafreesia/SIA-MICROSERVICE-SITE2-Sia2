@@ -20,6 +20,6 @@ class AuthenticateAccess
         if(in_array($request->header('Authorization'), $validSecrets)){
             return $next($request);
         }
-        abort(Response::HTTP_FORBIDDEN);
+        abort(Response::HTTP_UNAUTHORIZED);
     }
 }
